@@ -5,7 +5,7 @@
   @include('admin.layouts._partial.css')
  
 </head>
-<body class="hold-transition sidebar-mini layout-navbar-fixed">
+<body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -37,7 +37,8 @@
 </div>
 
 @include('admin.layouts._partial.script')
-{{-- @stack('scripts') --}}
+
+@stack('scripts')
 
 </body>
 </html>
