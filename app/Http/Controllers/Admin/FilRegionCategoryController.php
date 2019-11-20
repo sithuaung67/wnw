@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\SezSectorCategory;
+use App\FilRegionCategory;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class SezSectorCategoryController extends Controller
+class FilRegionCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,9 @@ class SezSectorCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $sez_sector_categories=SezSectorCategory::all();
-        return view('admin.sez.sector-category.index', compact('sez_sector_categories'));
+    {
+        $fil_region_category=FilRegionCategory::all();
+        return view('admin.fil.region_category.index')->with(compact('fil_region_category'));
     }
 
     /**
@@ -25,7 +26,8 @@ class SezSectorCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.sez.sector-category.create');
+        return view('admin.fil.region_category.create');
+
     }
 
     /**
@@ -36,20 +38,23 @@ class SezSectorCategoryController extends Controller
      */
     public function store(Request $request)
     {   
-        $this->validate($request,[
+        $request->validate([
             'name'=>'required',
         ]);
-        SezSectorCategory::create($request->all());
-        return redirect('sez-sector-categories');
+        $name=$request['name'];
+        $fil_region_category=new FilRegionCategory();
+        $fil_region_category->name=$name;
+        $fil_region_category->save();
+        return redirect('/fil/region/category/index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SezSectorCategory  $sezSectorCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SezSectorCategory $sezSectorCategory)
+    public function show($id)
     {
         //
     }
@@ -57,10 +62,10 @@ class SezSectorCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SezSectorCategory  $sezSectorCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SezSectorCategory $sezSectorCategory)
+    public function edit($id)
     {
         //
     }
@@ -69,26 +74,28 @@ class SezSectorCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SezSectorCategory  $sezSectorCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        SezSectorCategory::find($id)->update($request->all());
-
-        return redirect('sez-sector-categories');
+        $id=$request['id'];
+        $name=$request['name'];
+        $region=FilRegionCategory::whereId($id)->firstOrFail();
+        $region->name=$name;
+        $region->update();
+        return redirect('/fil/region/category/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SezSectorCategory  $sezSectorCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-        SezSectorCategory::destroy($id);
-
-        return redirect('sez-sector-categories');
+        FilRegionCategory::destroy($id);
+        return redirect()->back();
     }
 }

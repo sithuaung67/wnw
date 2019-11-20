@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\SezCountryCategory;
+use App\Http\Controllers\Controller;
+use App\SezZoneCategory;
 use Illuminate\Http\Request;
-use Validator,Redirect,Response;
+use Yajra\Datatables\Datatables;
 
-class SezCountryCategoryController extends Controller
+class SezZoneCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class SezCountryCategoryController extends Controller
      */
     public function index()
     {   
-        $sez_country_categories=SezCountryCategory::all();
-        return view('admin.sez.country-category.index', compact('sez_country_categories'));
+        $zonecategories=SezZoneCategory::all();
+        return view('admin.sez.zone-category.index',compact('zonecategories'));
     }
 
     /**
@@ -26,7 +27,7 @@ class SezCountryCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.sez.country-category.create');
+        return view('admin.sez.zone-category.create');
     }
 
     /**
@@ -40,58 +41,60 @@ class SezCountryCategoryController extends Controller
         $this->validate($request,[
             'name'=>'required',
         ]);
-        SezCountryCategory::create($request->all());
-
-        return Redirect::to("sez-country-categories")->withSuccess('Great! Form successfully submit with validation.');
+        SezZoneCategory::create([
+            'name'=>$request->name,
+        ]);
+        return redirect('sez-zone-categories');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SezCountryCategory  $sezCountryCategory
+     * @param  \App\SezZoneCategory  $sezZoneCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(SezCountryCategory $sezCountryCategory)
+    public function show(SezZoneCategory $sezZoneCategory)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SezCountryCategory  $sezCountryCategory
+     * @param  \App\SezZoneCategory  $sezZoneCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(SezCountryCategory $sezCountryCategory)
+    public function edit( $id)
     {
-        //
+       
+        $zone=SezZoneCategory::find($id);
+
+        return view('admin.sez.zone-category.edit', compact('zone'));
+       
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SezCountryCategory  $sezCountryCategory
+     * @param  \App\SezZoneCategory  $sezZoneCategory
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        SezCountryCategory::find($id)->update($request->all());
-
-        return redirect('sez-country-categories');
+        SezZoneCategory::find($id)->update($request->all());
+        return redirect('sez-zone-categories');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SezCountryCategory  $sezCountryCategory
+     * @param  \App\SezZoneCategory  $sezZoneCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy($id)
     {
-        //
-        SezCountryCategory::destroy($id);
-
-        return redirect('sez-country-categories');
+        SezZoneCategory::destroy($id);
+        return redirect('sez-zone-categories');
     }
 }
