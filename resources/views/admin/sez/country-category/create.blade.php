@@ -28,12 +28,20 @@
                   
                 <a href="{{route('sez-country-categories.index')}}" class="back btn btn-primary btn-sm"><i class="fa fa-angle-double-left"></i> Back to <span>lists</span></a>
                 </div>
+                {{-- @if ($message = Session::get('success'))
+               <div class="alert alert-success alert-block">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <strong>{{ $message }}</strong>
+               </div>
+               <br>
+               @endif --}}
                 <form action="{{route('sez-country-categories.store')}}" method="POST">
                   @csrf
                   <div class="card-body">
                     <div class="form-group">
                       <label for="">Country Categories Name</label>
                       <input type="text" name="name" class="form-control" id="" placeholder="enter text">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                     

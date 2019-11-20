@@ -44,6 +44,12 @@ class SezCountryInvestmentController extends Controller
     public function store(Request $request)
     {
         //
+        $input = \Request::all();
+        $this->validate($request,[
+            'sez_country_category_id'=>'required',
+            'quantity'=>'required',
+            'amount'=>'required',
+        ]);
         SezCountryInvestment::create($request->all());
 
         return redirect('sez-country-investment');

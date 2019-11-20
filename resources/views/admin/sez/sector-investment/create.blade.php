@@ -37,19 +37,25 @@
                         <select name="sez_sector_category_id" id="" class="form-control">
                           <option value="">Choose Categories</option>
                           @foreach($sez_sector_categories as $key=>$value)
-                          <option value="{{$key}}">{{$value}}</option>
+                          <option value="{{$key}}" {{old('sez_sector_category_id')==$key ? 'selected' : ''}}>{{$value}}</option>
                           @endforeach
                         </select>
+                      <span class="text-danger">{{ $errors->first('sez_sector_category_id') }}</span>
+
                     </div>
 
                     <div class="form-group">
                       <label for="">Quantity</label>
-                      <input type="text" name="quantity" class="form-control" id="" placeholder="enter quantity">
+                      <input type="text" name="quantity" class="form-control" value="{{old('quantity')}}" id="" placeholder="enter quantity">
+                      <span class="text-danger">{{ $errors->first('quantity') }}</span>
+
                     </div>
 
                     <div class="form-group">
                       <label for="">Amount  </label>
-                      <input type="text" name="amount" class="form-control" id="" placeholder="enter amount">
+                      <input type="text" name="amount" class="form-control" value="{{old('amount')}}" id="" placeholder="enter amount">
+                      <span class="text-danger">{{ $errors->first('amount') }}</span>
+
                     </div>
 
 

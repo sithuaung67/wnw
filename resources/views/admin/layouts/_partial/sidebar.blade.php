@@ -60,7 +60,7 @@
                     <!--  Sez Zone Categories-->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                          <i class="fa fa-circle" aria-hidden="true"></i>
+                          <i class="fa fa-sliders" aria-hidden="true"></i>
 
                           <p>
                             categories
@@ -89,8 +89,7 @@
                           <!--  Sez Zone Investment-->
                       <li class="nav-item has-treeview">
                           <a href="#" class="nav-link">
-                            <i class="fa fa-circle" aria-hidden="true"></i>
-
+                            <i class="fa fa-sliders" aria-hidden="true"></i>
                             <p>
                               investments
                               <i class="fas fa-angle-left right"></i>

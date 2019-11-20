@@ -36,7 +36,10 @@ class SezZoneCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $this->validate($request,[
+            'name'=>'required',
+        ]);
         SezZoneCategory::create([
             'name'=>$request->name,
         ]);

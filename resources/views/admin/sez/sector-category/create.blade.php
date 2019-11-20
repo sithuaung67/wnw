@@ -34,6 +34,8 @@
                     <div class="form-group">
                       <label for="">Sector Categories Name</label>
                       <input type="text" name="name" class="form-control" id="" placeholder="enter text">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
+
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                     

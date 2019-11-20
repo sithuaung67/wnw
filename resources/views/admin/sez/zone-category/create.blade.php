@@ -31,9 +31,10 @@
                 <form action="{{route('sez-zone-categories.store')}}" method="POST">
                   @csrf
                   <div class="card-body">
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
                       <label for="">Zone Categories Name</label>
                       <input type="text" name="name" class="form-control" id="" placeholder="enter text">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
                     

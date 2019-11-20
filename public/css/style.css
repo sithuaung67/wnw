@@ -1,3 +1,9 @@
 .back{
 	margin-left:550px;
 }
+.chart-back {
+	color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: none;
+}

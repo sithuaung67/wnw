@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SezCountryCategory;
 use Illuminate\Http\Request;
+use Validator,Redirect,Response;
 
 class SezCountryCategoryController extends Controller
 {
@@ -41,7 +42,7 @@ class SezCountryCategoryController extends Controller
         ]);
         SezCountryCategory::create($request->all());
 
-        return redirect('sez-country-categories');
+        return Redirect::to("sez-country-categories")->withSuccess('Great! Form successfully submit with validation.');
     }
 
     /**

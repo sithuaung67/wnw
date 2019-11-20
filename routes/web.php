@@ -2,7 +2,7 @@
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('auth.login');
 });
 Route::get('charts', function () {
     return view('admin.chart.chart');

@@ -41,7 +41,12 @@ class SezSectorInvestmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $this->validate($request,[
+            'sez_sector_category_id'=>'required',
+            'quantity'=>'required',
+            'amount'=>'required',
+        ]);
         SezSectorInvestment::create($request->all());
 
         return redirect('sez-sector-investment');
