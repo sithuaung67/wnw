@@ -13,7 +13,6 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('dashboard','DashboardController@index')->name('dashboard');
-// Route::get('/', 'HomeController@index');
 
 
 // Sez Zone Category

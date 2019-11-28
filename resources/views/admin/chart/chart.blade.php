@@ -1,20 +1,76 @@
 @extends('admin.layouts.chart_master')
 
 @section('content')
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{asset('image/Logo.png')}}" alt=""></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{route('dashboard')}}">Home <span class="sr-only">(current)</span></a>
+        </li>
+         <li class="nav-item">
+        <h3 align="center" style="margin-left: 350px;">Mifer Monitoring System</h3>
+        </li>
+      </ul>
+     
+    </div>
+  </nav>
+   
     <section class="content-header">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-6">
-            <h2>ChartJS</h2>
-          </div>
+         
+            <div class="col-md-2">
+             <div class="form-group">
+                <select name="" id="" class="form-control">
+                    <option value="">Choose</option>
+                    <option value="">SEZ</option>
+                    <option value="">MCIL</option>
+                    <option value="">FIL</option>
+                </select>
+             </div>
+              
+            </div>
+             <div class="col-md-2">
+             <div class="form-group">
+                <select name="" id="" class="form-control">
+                    <option value="">Choose</option>
+                    <option value="">Zone</option>
+                    <option value="">Sector</option>
+                    <option value="">Country</option>
+                </select>
+             </div>
+              
+            </div>
+             <div class="col-md-2">
+             <div class="form-group">
+                <select name="" id="" class="form-control">
+                  
+                </select>
+             </div>
+              
+            </div>
+            <div class="col-md-2">
+             <div class="form-group">
+                <select name="" id="" class="form-control">
+                    <option value="">Choose</option>
+                   
+                </select>
+             </div>
+              
+            </div>
+            <div class="col-md-2">
+             <div class="form-group">
+                <select name="" id="" class="form-control">
+                    <option value="">Choose</option>
+                    <option value="">Zone</option>
+                   
+                </select>
+             </div>
+              
+            </div>
 
-
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active">ChartJS</li>
-            </ol>
-          </div>
+          
         </div>
       </div>
     </section>
