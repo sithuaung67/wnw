@@ -14,6 +14,30 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('dashboard','DashboardController@index')->name('dashboard');
 
+// Main Category
+Route::get('main-categories','Admin\MainCategoryController@index')->name('main-categories.index');
+Route::get('main-categories/create','Admin\MainCategoryController@create')->name('main-categories.create');
+Route::post('main-categories/store','Admin\MainCategoryController@store')->name('main-categories.store');
+Route::patch('main-categories/update/{id}','Admin\MainCategoryController@update')->name('main-categories.update');
+Route::delete('main-categories/delete/{id}','Admin\MainCategoryController@destroy')->name('main-categories.destroy');
+
+// Sub Category
+Route::get('sub-categories','Admin\SubCategoryController@index')->name('sub-categories.index');
+Route::get('sub-categories/create','Admin\SubCategoryController@create')->name('sub-categories.create');
+Route::post('sub-categories/store','Admin\SubCategoryController@store')->name('sub-categories.store');
+Route::patch('sub-categories/update/{id}','Admin\SubCategoryController@update')->name('sub-categories.update');
+Route::delete('sub-categories/delete/{id}','Admin\SubCategoryController@destroy')->name('sub-categories.destroy');
+
+// Sub Data Category
+Route::get('sub-data-categories','Admin\SubDataCategoryController@index')->name('sub-data-categories.index');
+Route::get('sub-data-categories/create','Admin\SubDataCategoryController@create')->name('sub-data-categories.create');
+Route::post('sub-data-categories/store','Admin\SubDataCategoryController@store')->name('sub-data-categories.store');
+Route::patch('sub-data-categories/update/{id}','Admin\SubDataCategoryController@update')->name('sub-data-categories.update');
+Route::delete('sub-data-categories/delete/{id}','Admin\SubDataCategoryController@destroy')->name('sub-data-categories.destroy');
+Route::get('sub-data-categories/getData/{id}','Admin\SubDataCategoryController@getSubCategory');
+Route::get('sub-data-categories/getSubData/{id}','Admin\SubDataCategoryController@getSubDataCategory');
+
+Route::resource('investments','Admin\InvetmentController');
 
 // Sez Zone Category
 Route::get('sez-zone-categories','Admin\SezZoneCategoryController@index')->name('sez-zone-categories.index');

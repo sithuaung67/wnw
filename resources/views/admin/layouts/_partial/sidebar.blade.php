@@ -37,7 +37,7 @@
           </li>
 
           <!-- Start MCIL -->
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-list-alt" aria-hidden="true"></i>
               <p>
@@ -165,10 +165,10 @@
             </ul>
           </li>
           
-
+ --}}
 
         <!-- Start FIL -->
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-id-card-o" aria-hidden="true"></i>
               <p>
@@ -353,10 +353,10 @@
                 </ul>
               </li>
             </ul>
-          </li>
+          </li> --}}
           
             <!-- Star SEZ -->
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-university" aria-hidden="true"></i>
               <p>
@@ -577,8 +577,142 @@
                     </ul>
                 </li>
             </ul>
+          </li> --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-university" aria-hidden="true"></i>
+              <p>
+                Data Import
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            
+            <ul class="nav nav-treeview">
+
+              <!--  Sez Zone -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                  <p>
+                    Main Category
+                    <i class="fas fa-angle-left right"></i>
+                    
+                  </p>
+                </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('main-categories.index')}}" class="nav-link">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+
+                              <p>index</p>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('main-categories.create')}}" class="nav-link">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                              <p>create</p>
+                        </a>
+                      </li>             
+                    </ul>
+              </li>                  
+            </ul>
+            <ul class="nav nav-treeview">
+
+              <!--  Sez Zone -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                  <p>
+                    Sub Category
+                    <i class="fas fa-angle-left right"></i>
+                    
+                  </p>
+                </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('sub-categories.index')}}" class="nav-link">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+
+                              <p>index</p>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('sub-categories.create')}}" class="nav-link">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                              <p>create</p>
+                        </a>
+                      </li>             
+                    </ul>
+              </li>                  
+            </ul>
+            <ul class="nav nav-treeview">
+
+              <!--  Sez Zone -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                  <p>
+                    Sub Data Category
+                    <i class="fas fa-angle-left right"></i>
+                    
+                  </p>
+                </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('sub-data-categories.index')}}" class="nav-link">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+
+                              <p>index</p>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('sub-data-categories.create')}}" class="nav-link">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                              <p>create</p>
+                        </a>
+                      </li>             
+                    </ul>
+              </li>                  
+            </ul>
+            <ul class="nav nav-treeview">
+
+              <!--  Sez Zone -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                  <p>
+                    Investment
+                    <i class="fas fa-angle-left right"></i>
+                    
+                  </p>
+                </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('investments.index')}}" class="nav-link">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+
+                              <p>index</p>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('investments.create')}}" class="nav-link">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                              <p>create</p>
+                        </a>
+                      </li>             
+                    </ul>
+              </li>                  
+            </ul>
           </li>
-          
+               
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="fa fa-pie-chart" aria-hidden="true"></i>
