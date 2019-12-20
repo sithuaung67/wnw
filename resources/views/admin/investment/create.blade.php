@@ -67,9 +67,22 @@
                       <span class="text-danger">{{ $errors->first('name') }}</span>
 
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                       <label for="">Amount</label>
                       <input type="text" name="amount" class="form-control" value="{{old('name')}}" id="" placeholder="enter amount">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Start Date</label>
+                      <input type="date" name="start_date" class="form-control" value="{{old('start_date')}}" id="" placeholder="Start Date">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                    </div>
+                    <div class="form-group">
+                      <label for="">End Date</label>
+                      <input type="date" name="end_date" class="form-control" value="{{old('end_date')}}" id="" placeholder="End Date">
                       <span class="text-danger">{{ $errors->first('name') }}</span>
 
                     </div>

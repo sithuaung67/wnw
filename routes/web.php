@@ -4,9 +4,10 @@
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('charts', function () {
-    return view('admin.chart.chart');
-});
+Route::get('charts','Admin\ChartController@index');
+Route::get('charts/getData/{id}','Admin\ChartController@getSubCategory');
+Route::get('charts/getSubData/{id}','Admin\ChartController@getSubDataCategory');
+
 // Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -34,7 +35,9 @@ Route::get('sub-data-categories/create','Admin\SubDataCategoryController@create'
 Route::post('sub-data-categories/store','Admin\SubDataCategoryController@store')->name('sub-data-categories.store');
 Route::patch('sub-data-categories/update/{id}','Admin\SubDataCategoryController@update')->name('sub-data-categories.update');
 Route::delete('sub-data-categories/delete/{id}','Admin\SubDataCategoryController@destroy')->name('sub-data-categories.destroy');
+
 Route::get('sub-data-categories/getData/{id}','Admin\SubDataCategoryController@getSubCategory');
+
 Route::get('sub-data-categories/getSubData/{id}','Admin\SubDataCategoryController@getSubDataCategory');
 
 Route::resource('investments','Admin\InvetmentController');

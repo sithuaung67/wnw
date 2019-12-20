@@ -230,6 +230,16 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
 .back{
 	margin-left:560px;
 }
+.bg-light{
+	background-color: #b2c5e3!important;
+}
+.chart-title{
+	color: #FFFFFF;
+	font-weight: 500;
+}
+.nav-link{
+	color: #FFFFFF;
+}
 @font-face {
     font-family: 'ArtHouse03';
     font-style: normal;

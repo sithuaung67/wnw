@@ -23,6 +23,7 @@ mix.scripts([
 	'resources/plugins/chart.js/Chart.min.js',
 	'resources/dist/js/adminlte.min.js',
 	'resources/dist/js/demo.js',
+	'resources/plugins/daterangepicker/daterangepicker.js',
 	
 	],'public/js/admin.js')
 	.styles([
@@ -32,6 +33,8 @@ mix.scripts([
 	'resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
 	'resources/css/style.css',
     'resources/css/mmfonts.css',
+    'resources/plugins/daterangepicker/daterangepicker.css',
+
 
 	
 	],'public/css/admin.css');

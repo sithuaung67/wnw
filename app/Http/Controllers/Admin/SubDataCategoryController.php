@@ -108,10 +108,13 @@ class SubDataCategoryController extends Controller
 
         return response()->json($sub_data_category);
     }
+
     public function getSubDataCategory($subDataCategory)
     {
         $sub_data_category=SubDataCategory::where('sub_category_id',$subDataCategory)->pluck('name','id');
 
         return response()->json($sub_data_category);
     }
+
+    
 }

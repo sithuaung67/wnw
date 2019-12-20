@@ -9,7 +9,7 @@
           <a class="nav-link" href="{{route('dashboard')}}">Home <span class="sr-only">(current)</span></a>
         </li>
          <li class="nav-item">
-        <h3 align="center" style="margin-left: 350px;">Mifer Monitoring System</h3>
+        <h3 align="center" style="margin-left: 350px;" class="chart-title">Mifer Monitoring System</h3>
         </li>
       </ul>
      
@@ -19,39 +19,47 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row">
-         
+          <form action="" method="GET"></form>
             <div class="col-md-2">
              <div class="form-group">
-                <select name="" id="" class="form-control">
+                      <label for="">Main Categories Name</label>
+                <select name="main_category_id" id="main_category_id" class="form-control">
+
                     <option value="">Choose</option>
-                    <option value="">SEZ</option>
-                    <option value="">MCIL</option>
-                    <option value="">FIL</option>
+                    @foreach($mian_categories as $key=>$value)
+                    <option value="{{$key}}">{{$value}}</option>
+                      
+                    @endforeach
+                    
                 </select>
              </div>
               
             </div>
              <div class="col-md-2">
              <div class="form-group">
-                <select name="" id="" class="form-control">
-                    <option value="">Choose</option>
-                    <option value="">Zone</option>
-                    <option value="">Sector</option>
-                    <option value="">Country</option>
+                    <label for="">Sub Categories Name</label>
+                <select name="sub_category_id" id="" class="form-control">
+
+                    <option value="">Choose Categories</option>
+                    
                 </select>
              </div>
               
             </div>
-             <div class="col-md-2">
+             <div class="col-md-4">
              <div class="form-group">
-                <select name="" id="" class="form-control">
-                  
-                </select>
+                  <label for="">Sub Data Categories Name</label>
+
+                 <select name="sub_data_category_id" id="" class="form-control">
+                          <option value="">Choose Categories</option>
+                  </select>
              </div>
               
             </div>
             <div class="col-md-2">
              <div class="form-group">
+                  <label for="">Choose Month</label>
+
                 <select name="" id="" class="form-control">
                     <option value="">Choose</option>
                    
@@ -61,6 +69,8 @@
             </div>
             <div class="col-md-2">
              <div class="form-group">
+                  <label for="">Choose Year</label>
+
                 <select name="" id="" class="form-control">
                     <option value="">Choose</option>
                     <option value="">Zone</option>
@@ -77,26 +87,6 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-        
-            <div class="card card-danger">
-              <div class="card-header">
-                <h3 class="card-title">Donut Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <canvas id="donutChart" style="height:230px; min-height:230px"></canvas>
-              </div>
-             
-            </div>
-        
-          </div>
-        
           <div class="col-md-6">
          
            
@@ -130,11 +120,65 @@
 @endsection
   
 @section('script')
+<script>
+  
+</script>
+  <script>
+      
+   $(document).ready( function(){
+    $('select[name="main_category_id"]').on('change', function(){
+
+        var subcategory=$(this).val();
+        if(subcategory){
+          $.ajax({
+          url: '/charts/getData/' + subcategory,
+          type: "GET",
+          dataType: "json",
+
+          success: function(data) {
+
+                        $('select[name="sub_category_id"]').empty();
+                        $('select[name="sub_category_id"]').append('<option value="">Choose Sub Categories</option>');
+
+
+                        $.each(data, function(key, value) {
+                            $('select[name="sub_category_id"]').append('<option value="'+key+'">'+value+'</option>');
+                        });
+                    }, 
+                });
+        }
+    });
+
+    $('select[name="sub_category_id"]').on('change', function(){
+
+        var subcategory=$(this).val();
+        if(subcategory){
+          $.ajax({
+          url: '/charts/getSubData/' + subcategory,
+          type: "GET",
+          dataType: "json",
+
+          success: function(data) {
+                        $('select[name="sub_data_category_id"]').empty();
+                        $('select[name="sub_data_category_id"]').append('<option value="">Choose Sub Categories</option>');
+
+
+                        $.each(data, function(key, value) {
+                            $('select[name="sub_data_category_id"]').append('<option value="'+key+'">'+value+'</option>');
+                        });
+                    }, 
+                });
+        }
+    });
+   });
+ </script>
+
+  
     <script>
   $(function () {
-   
+   var data={{$sub_data_categories}}
     var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : data,
       datasets: [
         {
           label               : 'Foregin Investment',
@@ -145,7 +189,7 @@
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
+          data                : data,
         },
         {
           label               : 'Citizen Investment',
@@ -180,39 +224,6 @@
         }]
       }
     }
-    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-    var lineChartData = jQuery.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartOptions.datasetFill = false
-
-    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
-    var donutData        = {
-      labels: [
-          'Chrome', 
-          'IE',
-          'FireFox', 
-          'Safari', 
-          'Opera', 
-          'Navigator', 
-      ],
-      datasets: [
-        {
-          data: [700,500,400,600,300,100],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
-        }
-      ]
-    }
-    var donutOptions     = {
-      maintainAspectRatio : false,
-      responsive : true,
-    }
-  
-    var donutChart = new Chart(donutChartCanvas, {
-      type: 'doughnut',
-      data: donutData,
-      options: donutOptions      
-    })
 
     var barChartCanvas = $('#barChart').get(0).getContext('2d')
     var barChartData = jQuery.extend(true, {}, areaChartData)
@@ -233,7 +244,6 @@
       options: barChartOptions
     })
 
-    var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
     var stackedBarChartData = jQuery.extend(true, {}, barChartData)
 
   })

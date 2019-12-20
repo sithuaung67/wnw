@@ -20,6 +20,8 @@ class CreateInvetmentsTable extends Migration
             $table->unsignedBigInteger('sub_data_category_id');
             $table->string('quantity');
             $table->string('amount');
+            $table->date('start_date');
+            $table->date('end_date');
 
             $table->foreign('main_category_id')
                   ->references('id')->on('main_categories')

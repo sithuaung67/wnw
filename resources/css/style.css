@@ -1,3 +1,13 @@
 .back{
 	margin-left:560px;
 }
+.bg-light{
+	background-color: #b2c5e3!important;
+}
+.chart-title{
+	color: #FFFFFF;
+	font-weight: 500;
+}
+.nav-link{
+	color: #FFFFFF;
+}
