@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\JorgChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,4 +28,20 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+     public function jorgchart()
+    {
+        $jorgchat=JorgChart::all();
+        return view('jorgchart',compact('jorgchat'));
+    }
+     public function chart()
+    {
+        $chart=JorgChart::all();
+        return response()->json($chart);
+    }
+
+    public function getLogout(){
+        Auth::logout();
+        return redirect()->route('frontend_home');
+    }
+
 }

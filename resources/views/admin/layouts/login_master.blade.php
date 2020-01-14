@@ -3,7 +3,7 @@
 <head>
     @include('admin.layouts._partial.meta')
     @include('admin.layouts._partial.css')
-  
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -44,13 +44,13 @@
         <button type="submit" class="btn btn-primary btn-block">Sign In</button>
         </div>
       </form>
-       
 
-     
+
+
       <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>
       </p>
-    
+
     </div>
   </div>
 </div>

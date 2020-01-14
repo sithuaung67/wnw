@@ -49239,7 +49239,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/soemoethu/LMT/mms/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/December25/Wings&Wheels/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

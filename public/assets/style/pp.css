@@ -1,0 +1,65 @@
+body{
+    background: url("../img/bg.png");
+}
+.navbar{
+    background: url("../img/navbg.png");
+
+}
+.navwrapper{
+    background: url("../img/navbg.png");
+}
+.jumbotron{
+    background: hotpink;
+}
+.myslide-img{
+    width: 500px;
+    height: 250px;
+}
+.header-title{
+    font-family: Cambria;
+    color:deeppink;
+}
+.header-text{
+    color:peachpuff;
+}
+
+/*HomeSection*/
+.home-title{
+    padding-top: 25%;
+}
+.home-text-title{
+    padding:0px 10%;
+}
+.umimg{
+    padding-top: 25%;
+}
+
+
+/*Carousel Section*/
+/* .vertical-center{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+.ymcolor{
+    color:deeppink;
+}
+.ymtext{
+    color:palevioletred;
+}
+.carousel-indicators{
+    position: absolute;
+    bottom:-45px;
+}
+.carousel-indicators >li{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background: purple;
+}
+.carousel-indicators >li.active{
+    background: palevioletred;
+}
+.carousel-control-prev-icon{
+    text-color: purple;
+} */

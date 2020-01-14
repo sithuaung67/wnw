@@ -1,0 +1,149 @@
+/* New Member Page Start */
+.form{
+    padding:80px;
+}
+.border_form{
+    border:1px solid #06c;
+    border-radius: 15px;
+    padding: 50px;
+}
+.form input{
+    width:auto;
+}
+/* New Member Page End */
+
+/* Contact Start */
+.contact_page{
+    background: url('../img/contact.jpg');
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+}
+.contact, .contact i{
+    font-weight:700;
+    color:#06c;
+}
+input{
+    padding:5px;
+    width:100%;
+    border-radius:5px;
+    border: 1px solid #ccc;
+}
+.send{
+    text-align: center;
+    width:100%;
+    padding:20px;
+}
+.send input{
+    width:30%;
+}
+/* Contact End */
+
+/* Membership Page Start */
+.membership{
+    background: url('../img/membership.jpg');
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+}
+.commitbox{
+    background-color: #c60;
+    opacity: 0.9;
+    width: 100%;
+}
+.kinds{
+    background-color: #06c;
+    width: 100%;
+}
+.member{
+    background-color: #06c;
+    opacity: 0.9;
+    width: 100%;
+}
+.kinds ul li{
+    margin-bottom:30px;
+}
+.commit{
+    background: url('../img/balloons.jpg');
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+}
+/* Membership Page End */
+
+body p{
+    font-size: 14px !important;
+}
+.imglogo{
+    width:280px;
+}
+.header-text{
+    font-size:12px;
+}
+.section-footer{
+    background-color:#06c;
+    color: #fff;
+    padding: 5%;
+}
+.about{
+    background-image: url("../../image/tour1.jpg");
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+.bgbox{
+    background-color: #06c;
+    opacity: 0.7;
+    width: 100%;
+}
+.team{
+    margin-top: 50px;
+    font-size: 12px;
+    padding-bottom: 50px;
+}
+.history{
+    background-color:#ddd;
+}
+.second{
+    font-size: 13px;
+    padding-top: 30px;
+}
+.meet img{
+
+    background-repeat: no-repeat;
+    width:120px;
+    height: 120px;
+    border: #fff;
+    border-style: solid;
+}
+.meet{
+    background :url('../img/win.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 650px;
+    margin-top: -17px;
+}
+.circlephoto{
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.meet  p{
+    padding-left: 25px;
+}
+.meet h5{
+    padding-left: 25px;
+}
+.brand{
+    padding-top: 50px;
+}
+.brand p{
+    padding-left: 95px;
+    font-size: 14px;
+}
+.final{
+    padding-left: 100px;
+    padding-top:50px ;
+    padding-bottom: 50px;
+}

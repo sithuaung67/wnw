@@ -24,7 +24,7 @@ mix.scripts([
 	'resources/dist/js/adminlte.min.js',
 	'resources/dist/js/demo.js',
 	'resources/plugins/daterangepicker/daterangepicker.js',
-	
+
 	],'public/js/admin.js')
 	.styles([
 	'resources/dist/css/adminlte.min.css',
@@ -36,6 +36,6 @@ mix.scripts([
     'resources/plugins/daterangepicker/daterangepicker.css',
 
 
-	
+
 	],'public/css/admin.css');
 
